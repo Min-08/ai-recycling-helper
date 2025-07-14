@@ -63,6 +63,7 @@ def analyze_image():
     if not image_data_url or not prompt:
         return jsonify({"error": "Missing 'imageData' or 'prompt' field."}), 400
 
+    mime_type   = "image/jpeg" if image_data_url.strip().lower().startswith("data:image/jpeg") else "image/png"
     base64_image = _extract_base64(image_data_url)
 
     gemini_req = {
@@ -73,7 +74,7 @@ def analyze_image():
                     {"text": prompt},
                     {
                         "inlineData": {
-                            "mimeType": "image/png",
+                            "mimeType": mime_type,
                             "data": base64_image,
                         }
                     },
