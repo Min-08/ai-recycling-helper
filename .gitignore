@@ -1,0 +1,17 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+backend/.env
+
+# Node
+frontend/node_modules/
+frontend/.env.local
+
+# Build outputs
+frontend/dist/
+backend/static/   # 나중에 프런트 빌드물을 복사할 수도 있으므로 제외
+
+# OS
+.DS_Store
+Thumbs.db
