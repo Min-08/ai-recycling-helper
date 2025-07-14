@@ -38,6 +38,7 @@ export default function App() {
       }
       setCurrentFacingMode(mode);
       setPhotoDataUrl(null);
+      videoRef.current?.load();
       setButtonState("capture");
       setError(null);
     } catch (err) {
