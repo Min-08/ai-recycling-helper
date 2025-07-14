@@ -168,8 +168,17 @@ export default function App() {
 
       <div className="relative w-full max-w-2xl aspect-square bg-gray-300 rounded-xl overflow-hidden shadow-xl flex items-center justify-center mb-6">
         {!isCameraReady && !photoDataUrl && <p className="text-gray-600 text-lg">카메라 로딩 중...</p>}
-        <video ref={videoRef} autoPlay playsInline className={`w-full h-full object-cover ${photoDataUrl ? "hidden" : ""}`} />
-        {photoDataUrl && <img src={photoDataUrl} alt="Captured" className="w-full h-full object-cover" />}
+        <video
+          ref={videoRef}
+          autoPlay
+          playsInline
+          className={`absolute w-full h-full object-cover z-10 ${photoDataUrl ? "hidden" : ""}`}
+        />
+        {photoDataUrl && <img
+          src={photoDataUrl}
+          alt="Captured"
+          className="absolute w-full h-full object-cover z-0"
+        />}
         <canvas ref={canvasRef} className="hidden" />
         {hasMultipleCameras && (
           <button onClick={toggleCamera} className="absolute top-3 left-3 bg-white bg-opacity-75 text-black text-sm font-semibold py-1 px-3 rounded-lg shadow-md z-10 hover:bg-opacity-90 transition-colors">
