@@ -134,9 +134,16 @@ export default function App() {
   // UI helpers
   // ---------------------------------------------------------------------
   const onBtnClick = () => {
-    if (buttonState === "capture") capturePhoto();
-    else if (buttonState === "analyze") analyzePhoto();
-    else if (buttonState === "reset") startCamera(currentFacingMode);
+    if (buttonState === "capture") {
+      capturePhoto();
+    } else if (buttonState === "analyze") {
+      analyzePhoto();
+    } else if (buttonState === "reset") {
+      // 🔄 다시하기: 이전 스냅샷 즉시 제거 후 카메라 재시작
+      setPhotoDataUrl(null);
+      setResultText("카메라를 켜고 쓰레기를 비춰주세요.");
+      startCamera(currentFacingMode);
+    }
   };
 
   const toggleCamera = () => startCamera(currentFacingMode === "environment" ? "user" : "environment");
