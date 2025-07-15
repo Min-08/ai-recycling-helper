@@ -35,7 +35,7 @@ export default function App() {
           setIsCameraReady(true);
           setResultText("카메라가 준비되었습니다. 쓰레기를 비춰주세요.");
         };
-        videoRef.current.load();
+        videoRef.current.play();
       }
       setCurrentFacingMode(mode);
       setPhotoDataUrl(null);
