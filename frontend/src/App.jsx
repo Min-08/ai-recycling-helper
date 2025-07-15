@@ -187,7 +187,7 @@ export default function App() {
             className="absolute w-full h-full object-cover"
           />
         )}
-        <canvas ref={canvasRef} className="hidden" />
+        <canvas ref={canvasRef} style={{ display: 'none' }} />
         {hasMultipleCameras && (
           <button
             onClick={toggleCamera}
