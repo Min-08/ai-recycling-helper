@@ -216,3 +216,10 @@ export default function App() {
           <div className="flex items-center justify-center h-full">
   <div className="animate-spin rounded-full border-t-4 border-blue-500 border-solid w-12 h-12"></div>
 </div>
+) : (
+          <p className="text-gray-800 whitespace-pre-wrap">{resultText}</p>
+        )}
+      </div>
+    </div>
+  );
+}
