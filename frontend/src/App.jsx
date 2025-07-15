@@ -214,4 +214,5 @@ export default function App() {
         {error && <p className="text-red-600 font-medium mb-2">{error}</p>}
         {isLoading ? (
           <div className="flex items-center justify-center h-full">
-            <div className="animate-spin rounded
+  <div className="animate-spin rounded-full border-t-4 border-blue-500 border-solid w-12 h-12"></div>
+</div>
